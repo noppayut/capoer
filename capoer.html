@@ -1,0 +1,90 @@
+<!DOCTYPE html>	
+	<html>
+	<head>
+		<title>Capo-er</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/capoer.js"></script>
+		<!-- <link rel="stylesheet" href="style.css"> -->
+	</head>
+	<body>
+		<h1>Capo-er</h1>
+		<div>
+		<table>
+			<tr>
+				<td>
+				<div>
+					<h2>Original chords</h2>
+					<textarea rows="25" cols="40" class="original_chord"></textarea>
+				</div>
+				</td>
+		
+				<td>
+				<div>
+					<h2>Transposed chords</h2>
+					<textarea rows="25" cols="40" class="transposed_chord"></textarea>
+				</div>
+				</td>
+			</tr>
+			<tr>
+				<td align='right'>
+					<button type="button" class="input_chord" onclick="inputChord()">Input chord</button>
+				</td>
+				<td align='right'>
+					<table>
+					<tr>
+						<td> <button type="button" class="capo_minus" onclick="down()">-</button>  </td>
+						<td class="capo"> 0 </td>
+						<td>  <button type="button" class="capo_plus" onclick="up()">+</button> </td>
+					</tr>				
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align='right'>
+					<table>
+						<tr>
+							<td> Best fret on capo:  </td>
+							<td class="easiest_capo"> 0 </td>					
+						</tr>				
+					</table>
+				</td>
+				<td></td>
+			</tr>
+		</table>
+		<div>
+		<h2>Difficulty score</h2>
+			<textarea class="diff_score" rows="15" cols="80"></textarea>
+		</div>
+		<!--
+		</div>
+		<div>
+			<h2>Capo</h2>
+			<table>
+				<tr>
+					<td> <button type="button" class="capo_minus">-</button>  </td>
+					<td class="capo"> 0 </td>
+					<td>  <button type="button" class="capo_plus">+</button> </td>
+				</tr>				
+			</table>
+			<table>
+				<tr>
+					<td> Best fret for capo:  </td>
+					<td class="capo"> 0 </td>					
+				</tr>				
+			</table>
+		</div>
+		-->
+		<style>
+		textarea {
+			resize:none;
+		}
+		button {
+			height: 30px;
+		}
+		</style>
+		<script>
+
+		</script>
+	</body>
+</html>
