@@ -2,9 +2,12 @@
 	<html>
 	<head>
 		<title>Capo-er</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/capoer.js"></script>
-		<!-- <link rel="stylesheet" href="style.css"> -->
+
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<h1>Capo-er</h1>
@@ -12,29 +15,29 @@
 		<table>
 			<tr>
 				<td>
-				<div>
+				<div class="input_box">
 					<h2>Original chords</h2>
-					<textarea rows="25" cols="40" class="original_chord"></textarea>
+					<textarea rows="15" cols="40" class="original_chord form-control" id="exampleFormControlTextarea3"></textarea>
 				</div>
 				</td>
 		
 				<td>
-				<div>
+				<div class="input_box">
 					<h2>Transposed chords</h2>
-					<textarea rows="25" cols="40" class="transposed_chord"></textarea>
+					<textarea rows="15" cols="40" class="transposed_chord form-control" id="exampleFormControlTextarea3"></textarea>
 				</div>
 				</td>
 			</tr>
 			<tr>
 				<td align='right'>
-					<button type="button" class="input_chord" onclick="inputChord()">Input chord</button>
+					<button type="button" class="input_chord btn btn-default" onclick="inputChord()">Input chord</button>
 				</td>
 				<td align='right'>
 					<table>
 					<tr>
-						<td> <button type="button" class="capo_minus" onclick="down()">-</button>  </td>
+						<td> <button type="button" class="capo_minus btn btn-default" onclick="down()">-</button>  </td>
 						<td class="capo"> 0 </td>
-						<td>  <button type="button" class="capo_plus" onclick="up()">+</button> </td>
+						<td>  <button type="button" class="capo_plus btn btn-default" onclick="up()">+</button> </td>
 					</tr>				
 				</table>
 				</td>
@@ -43,8 +46,8 @@
 				<td></td>
 				<td align='right'>
 					<table>
-						<tr>
-							<td> Best fret on capo:  </td>
+						<tr class="best_fret">
+							<td > Best fret on capo:  </td>
 							<td class="easiest_capo"> 0 </td>					
 						</tr>				
 					</table>
@@ -54,7 +57,10 @@
 		</table>
 		<div>
 		<h2>Difficulty score</h2>
-			<textarea class="diff_score" rows="15" cols="80"></textarea>
+			<textarea class="diff_score form-control" rows="10" cols="80" id="exampleFormControlTextarea3"></textarea>
+		</div>
+		<div class="credit">
+			See on <a href="https://github.com/noppayut/capoer">Github</a>
 		</div>
 		<!--
 		</div>
@@ -76,15 +82,13 @@
 		</div>
 		-->
 		<style>
-		textarea {
-			resize:none;
-		}
-		button {
-			height: 30px;
-		}
 		</style>
 		<script>
+			var originalchordplaceholder = "Write some or all chords of a song separated with one space here and press a \"Input chord\" button below.\n\neg. Am Em F G";
+			$("textarea.original_chord").attr('placeholder', originalchordplaceholder);
 
+			var difficultscoreplaceholder = "Score of each capo";
+			$('textarea.diff_score').attr('placeholder', difficultscoreplaceholder);
 		</script>
 	</body>
 </html>

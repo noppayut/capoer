@@ -1,0 +1,36 @@
+textarea {
+	resize:none;
+}
+html, body {
+    height: 100%;
+}
+html {
+    display: table;
+    margin: auto;
+}
+.input_box {
+	padding-left:5px;
+	padding-bottom:10px;
+}
+td.capo {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+.best_fret{
+	font-size: large;
+}
+
+.credit {
+	padding-top: 10px;
+	font-size: medium;
+	text-align: right;
+}
+
+h1 {
+	font-weight: bold;
+}
