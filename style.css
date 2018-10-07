@@ -2,7 +2,7 @@ textarea {
 	resize:none;
 }
 
-body {
+html, body {
     height: 100%;
 }
 

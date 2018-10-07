@@ -57,7 +57,7 @@
 		</table>
 		<div>
 		<h2>Difficulty score</h2>
-			<textarea class="diff_score form-control" rows="10" cols="80" id="exampleFormControlTextarea3"></textarea>
+			<textarea class="diff_score form-control" rows="10" cols="40" id="exampleFormControlTextarea3"></textarea>
 		</div>
 		<div class="credit">
 			See on <a href="https://github.com/noppayut/capoer">Github</a>
@@ -86,7 +86,9 @@
 			var screenheight = $(window).height();
 			if (screenwidth < screenheight) {
 				//zoom content when opened on mobile
-				$('body').css('zoom', screenwidth/$('body').width());
+				var scale = 0.95;
+				$('body').css('transform', 'scale(' + scale*screenwidth/$('body').innerWidth() + ')');
+				$('body').css('-webkit-transform', 'scale(' + scale*screenwidth/$('body').innerWidth() + ')');				
 			}
 			
 			var originalchordplaceholder = "Write some or all chords of a song separated with one space here and press a \"Input chord\" button below.\n\neg. Am Em F G";
