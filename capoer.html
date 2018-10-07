@@ -82,11 +82,13 @@
 		</div>
 		-->		
 		<script>
-			/*
-			if ($(window).width() < $(window).height()) {
-
+			var screenwidth = $(window).width();
+			var screenheight = $(window).height();
+			if (screenwidth < screenheight) {
+				//zoom content when opened on mobile
+				$('body').css('zoom', screenwidth/$('body').width());
 			}
-			*/
+			
 			var originalchordplaceholder = "Write some or all chords of a song separated with one space here and press a \"Input chord\" button below.\n\neg. Am Em F G";
 			$("textarea.original_chord").attr('placeholder', originalchordplaceholder);
 
