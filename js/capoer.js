@@ -54,7 +54,7 @@ function transpose(chords, capo) {
 	var newchord = '';
 	for (var i in chords) {
 		var chord = chords[i];		
-		if (chord == replacechar) {			
+		if (!note2num.hasOwnProperty(chord[0])) {
 			newchords.push(chord);
 			continue;
 		}
@@ -166,12 +166,17 @@ function formatChord(processedchords) {
 
 function inputChord() {
 	var rawchords = $(".original_chord").val();
+	Cookies.set("previous_raw", rawchords);
 	parseChord(rawchords);	
 	var easiestcapo = findEasietCapo(chords);	
 	capo = easiestcapo;
 	setCapo();
 	$(".easiest_capo").html(easiestcapo);
 	
+}
+
+function loadPreviousRawChord() {
+	$('.original_chord').val(Cookies.get("previous_raw"));
 }
 
 function up() {
@@ -207,4 +212,19 @@ D C#7 F#m B7 D E D A Bm7 F#m D A
 Bm7 F#m D C#7 F#m A Bm7 C#7
 D E/D C#m7 Fdim F#m Bm7 E
 F#m C#7 D E/D C#m7 Fdim F#m Bm7 E A Dm7
+
+D E C#m D F#m
+D E F#m B
+
+D E C#m F#m
+D E F#m
+D E C#m F#m
+D E D D C#
+
+D E C# F#m E
+A E F#
+D E C# F#m
+D E F#m F# F#m
+
+D C# F#m D E C#
 */

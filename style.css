@@ -27,6 +27,10 @@ body {
 	font-size: large;
 }
 
+.load_prev {
+	padding-right:10px;
+}
+
 .credit {
 	padding-top: 10px;
 	font-size: medium;
