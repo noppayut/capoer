@@ -154,7 +154,7 @@ function OCRCallbackChain(url) {
 }
 
 function getAPIKey() {
-	return "AIzaSyDLfE-sq2_VOHLtbFFnbnur9ne0pBwy4H4";
+	return "YOUR GOOGLE VISION API KEY";
 	var x;
 	$.get(API_KEY_PATH, function(response){x = response;});
 	return x;
