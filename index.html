@@ -1,12 +1,14 @@
 <!DOCTYPE html>	
 	<html>
 	<head>
+		<meta charset="UTF-8">
 		<title>Capo-er</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>		
 		<script src="js/js.cookie.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/capoer.js"></script>
+		<script src="js/chord-ocr.js"></script>
 
 		<link rel="stylesheet" href="style.css">
 	</head>
@@ -51,7 +53,7 @@
 				<td align='right'>
 					<table>
 						<tr class="best_fret">
-							<td > Best fret on capo:  </td>
+							<td> Best fret on capo:  </td>
 							<td class="easiest_capo"> 0 </td>					
 						</tr>				
 					</table>
@@ -59,6 +61,27 @@
 				<td></td>
 			</tr>
 		</table>
+
+		<!--   IMAGE INPUT  -->
+		<div>
+			<h2>Load from image (Chordtabs.in.th)</h2>
+			<div class="input_box">
+				<table width="100%">
+					<tr>
+						<td>
+							<input type="text" class="image_url form-control" size="70%">
+						</td>
+						<td align='center'>
+							<button type="button" class="load_image_url btn btn-default" onclick="loadImageChord()" >Load URL
+							</button>	
+						</td>
+					</tr>
+				</table>
+				
+			</div>
+			
+			<div><b>Note:</b> Image URL can be obtained by right clicking a chord image and selecting <b>Copy Image Address</b>. </div>
+		</div>
 		<div>
 		<h2>Difficulty score</h2>
 			<textarea class="diff_score form-control" rows="10" cols="40" id="exampleFormControlTextarea3"></textarea>
@@ -100,6 +123,9 @@
 
 			var difficultscoreplaceholder = "Score of each capo";
 			$('textarea.diff_score').attr('placeholder', difficultscoreplaceholder);
+
+			var imgurlplaceholder = "Chord image URL e.g. http://chordtabs.in.th/admin/admin/songsxx/c0002105.png";
+			$('.image_url').attr('placeholder', imgurlplaceholder);
 		</script>
 	</body>
 </html>
