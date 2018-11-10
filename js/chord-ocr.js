@@ -1,4 +1,4 @@
-var API_KEY_PATH = "C:/Users/noppa/Desktop/Free%20project/capoer/js/visionkey.txt";
+var API_KEY_PATH = "capoer/js/visionkey.txt";
 var OCRChords = "Loading...";
 
 function postCloudVision_api(img_url, key, callback) {
@@ -172,14 +172,15 @@ function reconstructLyrics(lyricsJSON) {
 
 	var lines = makeLines(lyricsPoints);	
 	sortLines(lines);
-	
+	/*
+	//FOR DEBUGGING PURPOSE
 	for (var i in lines) {
 		for (var j in lines[i].points){
 			$(".diff_score").val($(".diff_score").val() + lines[i].points[j].x + ", " + lines[i].points[j].y+ '\n');		
 		}		
 		$(".diff_score").val($(".diff_score").val() + "--------------------------\n");		
 	}
-	
+	*/
 	var alignedLyrics = alignLines(lines);	
 	return alignedLyrics;
 }
